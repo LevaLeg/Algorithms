@@ -1,0 +1,14 @@
+public class Tower {
+    public static void main(String[] args) {
+        int num = 3;
+        towerOfHanoi(num, 'A', 'C', 'B');
+    }
+    public static void towerOfHanoi (int num, char from, char to, char help) {
+        if (num == 1) {
+            System.out.println("Take disk from tower " + from + " to tower " + to);
+            return;
+        }
+        towerOfHanoi(num - 1, from, help, to);
+        System.out.println("Take disk from tower " + from + " to tower " + to);
+        towerOfHanoi(num - 1, help, to, from);
+    }
